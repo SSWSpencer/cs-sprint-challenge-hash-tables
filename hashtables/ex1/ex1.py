@@ -1,10 +1,3 @@
-def get_indices_of_item_weights(weights, length, limit):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
-
-
 """
      this code stores every value of weights in a cache
      the keys of the cache are every value in the weights array/list/whatever they're called in python #js4life
@@ -19,19 +12,24 @@ def get_indices_of_item_weights(weights, length, limit):
      otherwise, a match was not found, and it will return none
 
 """
+
+def get_indices_of_item_weights(weights, length, limit):
+    """
+    YOUR CODE HERE
+    """
+    # Your code here
+
     cache = {}
     for x in weights:
         cache[x] = limit - x
-
     a = None
     b = None
-
     for key in cache:
         a = key
         if cache[key] in weights:
             b = cache[key]
             break
-    
+
     if a is not None and b is not None:
         return [weights.index(b, (weights.index(a)+1)), weights.index(a)]
     else:
